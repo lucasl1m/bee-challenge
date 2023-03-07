@@ -4,7 +4,7 @@
 # tests
 /coverage
 
-# tailwind
+# configuration
 /postcss.config.cjs
 /tailwind.config.cjs
 
