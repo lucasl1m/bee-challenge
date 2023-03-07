@@ -7,7 +7,7 @@
     "overrides": [],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": "latest",
+        "ecmaFeatures": { "ts": true, "tsx": true },
         "sourceType": "module",
         "project": "./tsconfig.json"
     },
@@ -54,4 +54,5 @@
         "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/consistent-type-definitions": ["error", "interface"]
     }
+
 }

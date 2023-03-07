@@ -3,3 +3,8 @@
 
 # tests
 /coverage
+
+# tailwind
+/postcss.config.cjs
+/tailwind.config.cjs
+
