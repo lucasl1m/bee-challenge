@@ -59,6 +59,9 @@
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
-        "@typescript-eslint/triple-slash-reference": "off"
+        "@typescript-eslint/triple-slash-reference": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/consistent-type-imports": "off"
     }
 }
