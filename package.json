@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ext js,jsx,ts,tsx --cache",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx --cache",
     "style": "prettier --loglevel warn --ignore-unknown --no-error-on-unmatched-pattern",
     "style:check": "npm run style --check",
     "style:format": "npm run style --write",

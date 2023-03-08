@@ -67,7 +67,7 @@ export function Home(): JSX.Element {
                     </Text>
                 </div>
                 <div className="flex flex-col md:grid md:grid-flow-row-dense lg:grid-cols-4 lg:grid-flow-col-dense gap-6">
-                    <AccountCard amount={130981.20}/>
+                    <AccountCard amount={130981.2} />
                     <InvestimentCard amount={33212.46} />
                     <InvoiceCard amount={2432.11} />
                 </div>
