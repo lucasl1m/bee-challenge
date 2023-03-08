@@ -48,6 +48,10 @@ module.exports = {
                 base: '16px',
                 pill: '99px',
             },
+
+            boxShadow: {
+                DEFAULT: '0px 16px 48px rgba(0, 0, 0, 0.24)',
+            },
         },
     },
     plugins: [],
