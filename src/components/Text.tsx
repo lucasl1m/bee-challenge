@@ -2,14 +2,13 @@ import { Slot } from '@radix-ui/react-slot';
 import { clsx } from 'clsx';
 
 export interface TextProps {
-    size?: 'sm' | 'md' | 'lg';
-    color?: 'neutral' | 'white';
+    size?: 'sm' | 'md' | 'lg' | 'xl';
     children: React.ReactNode;
     asChild?: boolean;
     className?: string;
 }
 
-export function Text({ size = 'md', color = 'neutral', children, asChild = false, className }: TextProps): JSX.Element {
+export function Text({ size = 'md', children, asChild = false, className }: TextProps): JSX.Element {
     const Comp = asChild ? Slot : 'p';
 
     return (
@@ -20,10 +19,7 @@ export function Text({ size = 'md', color = 'neutral', children, asChild = false
                     'text-sm': size === 'sm',
                     'text-md': size === 'md',
                     'text-lg': size === 'lg',
-                },
-                {
-                    'text-neutral-800': color === 'neutral',
-                    'text-white': color === 'white',
+                    'text-xl': size === 'xl',
                 },
                 className,
             )}
