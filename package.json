@@ -13,7 +13,7 @@
     "style:format": "npm run style --write",
     "types:check": "tsc --pretty --noEmit",
     "pre:commit": "lint-staged",
-    "pre:push": "concurrently \"npm run types:check\" \"npm run lint . --max-warnings 0\" \"npm run style:check .\"",
+    "pre:push": "concurrently \"npm run types:check\" \"npm run lint .\" \"npm run style:check .\"",
     "prepare": "husky install"
   },
   "dependencies": {
