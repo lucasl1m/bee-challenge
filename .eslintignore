@@ -8,6 +8,12 @@
 /postcss.config.cjs
 /tailwind.config.cjs
 /jest.config.cjs
+/vite.config.ts
+/vitest.config.ts
 
 # storybook
 .storybook
+
+# production
+/build
+
