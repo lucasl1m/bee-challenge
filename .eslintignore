@@ -8,3 +8,5 @@
 /postcss.config.cjs
 /tailwind.config.cjs
 
+# storybook
+.storybook

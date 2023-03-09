@@ -3,8 +3,7 @@
         "browser": true,
         "es2021": true
     },
-    "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier"],
-    "overrides": [],
+    "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier", "plugin:storybook/recommended"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": { "ts": true, "tsx": true },
@@ -44,6 +43,9 @@
         "arrow-body-style": "off",
         "no-await-in-loop": "off",
 
+        "import/no-anonymous-default-export": "off",
+        "import/no-default-export": "off",
+
         "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": ["warn", { "extensions": [".jsx", ".tsx"] }],
         "react/prop-types": "off",
@@ -62,6 +64,8 @@
         "@typescript-eslint/triple-slash-reference": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-floating-promises": "off",
-        "@typescript-eslint/consistent-type-imports": "off"
+        "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint.io/rules/strict-boolean-expressions": "off",
+        "@typescript-eslint/consistent-type-assertions": "off"
     }
 }
