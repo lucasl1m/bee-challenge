@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { InvestimentCard } from '../../components/common/investiment-card/investiment-card';
 import { InvoiceCard } from '../../components/common/invoice-card/invoice-card';
@@ -11,7 +11,7 @@ import { Loading } from '../../components/common/loading/loading';
 
 import { api } from '../../services/api';
 
-import { IMoviment, IOffer, IAccounts, IOffers } from './types';
+import { IMoviment, IOffer, IAccounts } from './types';
 
 export function Home(): JSX.Element {
     const [isLoading, setIsLoading] = useState(true);

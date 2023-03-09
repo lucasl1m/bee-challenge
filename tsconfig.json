@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
   },
-  "include": ["src"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
   "exclude": ["node_module", "tailwind.config.cjs", "postcss.config.cjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
