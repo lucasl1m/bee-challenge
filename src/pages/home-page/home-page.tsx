@@ -12,14 +12,19 @@ import { Loading } from '../../components/common/loading/loading';
 import { api } from '../../services/api';
 
 import { IMoviment, IOffer, IAccounts } from './types';
+import { Button } from '../../components/common/button/button';
 
 export function Home(): JSX.Element {
     const [isLoading, setIsLoading] = useState(true);
+    const [hasError, setHasError] = useState(false);
     const [accounts, setAccounts] = useState<IAccounts>();
     const [moviments, setMoviments] = useState<IMoviment[]>([]);
     const [offers, setOffers] = useState<IOffer[]>([]);
 
     async function fetchData() {
+        setIsLoading(true);
+        setHasError(false);
+
         try {
             const [accountsResponse, movementsResponse, offersResponse] = await Promise.all([
                 api.get('/dashboard'),
@@ -38,6 +43,7 @@ export function Home(): JSX.Element {
             setOffers(offers);
             setIsLoading(false);
         } catch (error) {
+            setHasError(true);
             console.log(error);
         }
     }
@@ -45,6 +51,19 @@ export function Home(): JSX.Element {
     useEffect(() => {
         fetchData();
     }, []);
+
+    if (hasError) {
+        return (
+            <div className="flex flex-1 flex-col my-4 gap-4 lg:my-6">
+                <div className="flex flex-col">
+                    <Heading size="xl" className="text-neutral-800">
+                        Ops, algo deu errado !!!
+                    </Heading>
+                </div>
+                <Button onClick={fetchData}>Tentar novamente</Button>
+            </div>
+        );
+    }
 
     if (isLoading) {
         return <Loading />;
