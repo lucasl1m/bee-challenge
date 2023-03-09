@@ -1,14 +1,15 @@
 import { MdArrowForward, MdStorefront } from 'react-icons/md';
 
-import WomanAvatar from '../assets/woman-avatar.png';
+import WomanAvatar from '../../../assets/woman-avatar.png';
 
-import { Text } from './Text';
-import { Button } from './Button';
+import { Text } from '../text/text';
+import { Button } from '../button/button';
+import { formatAmout } from '../../../utils/format-amout';
 
 interface OfferCardProps {
     title: string;
     subtitle: string;
-    amount: string;
+    amount: number;
 }
 
 export function OfferCard({ title, subtitle, amount }: OfferCardProps): JSX.Element {
@@ -36,20 +37,13 @@ export function OfferCard({ title, subtitle, amount }: OfferCardProps): JSX.Elem
                                 {subtitle}
                             </Text>
 
-                            <div className="flex items-center">
-                                <Text size="sm" className="text-neutral-800 leading-normal">
-                                    <span>R$</span>
-                                </Text>
-                                <Text size="xl" className="text-neutral-800 leading-tight">
-                                    <strong>{amount}</strong>
-                                </Text>
-                            </div>
+                            <Text size="xl" className="text-neutral-800 leading-tight">
+                                <strong>{formatAmout(amount)}</strong>
+                            </Text>
                         </div>
                     </div>
 
-                    <Button block icon={<MdArrowForward className="text-neutral-800 text-md" />}>
-                        Ver oferta
-                    </Button>
+                    <Button icon={<MdArrowForward className="text-neutral-800 text-md" />}>Ver oferta</Button>
                 </div>
             </div>
         </div>
