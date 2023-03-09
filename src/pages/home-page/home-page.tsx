@@ -1,57 +1,57 @@
-import { InvestimentCard } from '../components/InvestimentCard';
-import { InvoiceCard } from '../components/InvoiceCard';
-import { AccountCard } from '../components/AccountCard';
-import { Heading } from '../components/Heading';
-import { Text } from '../components/Text';
-import { OfferCard } from '../components/OfferCard';
-import { MovimentCard } from '../components/MovimentCard';
+import { useCallback, useEffect, useState } from 'react';
 
-const moviments = [
-    {
-        movementId: 103912,
-        account: 'CURRENT',
-        compensationType: 'CREDIT',
-        description: 'Pix recebido - João José Marques',
-        amount: 227.98,
-        datetime: '2023-03-01T15:10:03-03:00',
-    },
-    {
-        movementId: 817291,
-        account: 'CURRENT',
-        compensationType: 'DEBIT',
-        description: 'Pix enviado - Yuri José',
-        amount: 5000.0,
-        datetime: '2023-02-20T10:10:03-03:00',
-    },
-    {
-        movementId: 889012,
-        account: 'INVESTIMENT',
-        compensationType: 'CREDIT',
-        description: 'Dividendos recebidos - IRDM11',
-        amount: 1200.0,
-        datetime: '2023-02-17T10:10:03-03:00',
-    },
-    {
-        movementId: 81726,
-        account: 'INVESTIMENT',
-        compensationType: 'CREDIT',
-        description: 'Dividendos recebidos - ALZR11',
-        amount: 700.95,
-        datetime: '2023-02-16T10:10:03-03:00',
-    },
-    {
-        movementId: 281723,
-        account: 'INVESTIMENT',
-        compensationType: 'CREDIT',
-        description: 'Dividendos recebidos - PLCR11',
-        amount: 89.0,
-        datetime: '2023-02-14T10:10:03-03:00',
-    },
-];
+import { InvestimentCard } from '../../components/common/investiment-card/investiment-card';
+import { InvoiceCard } from '../../components/common/invoice-card/invoice-card';
+import { AccountCard } from '../../components/common/account-card/account-card';
+import { Heading } from '../../components/common/heading/heading';
+import { Text } from '../../components/common/text/text';
+import { OfferCard } from '../../components/common/offer-card/offer-card';
+import { MovimentCard } from '../../components/common/moviment-card/moviment-card';
+import { Loading } from '../../components/common/loading/loading';
+
+import { api } from '../../services/api';
+
+import { IMoviment, IOffer, IAccounts, IOffers } from './types';
 
 export function Home(): JSX.Element {
+    const [isLoading, setIsLoading] = useState(true);
+    const [accounts, setAccounts] = useState<IAccounts>();
+    const [moviments, setMoviments] = useState<IMoviment[]>([]);
+    const [offers, setOffers] = useState<IOffer[]>([]);
+
+    async function fetchData() {
+        try {
+            const [accountsResponse, movementsResponse, offersResponse] = await Promise.all([
+                api.get('/dashboard'),
+                api.get('/movement'),
+                api.get('/offers'),
+            ]);
+
+            const { data: accountsData } = accountsResponse;
+            const { data: movementsData } = movementsResponse;
+            const {
+                data: { offers },
+            } = offersResponse;
+
+            setAccounts(accountsData);
+            setMoviments(movementsData);
+            setOffers(offers);
+            setIsLoading(false);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    if (isLoading) {
+        return <Loading />;
+    }
+
     return (
-        <div className="flex flex-1 flex-col gap-4">
+        <div className="flex flex-1 flex-col my-4 gap-4 lg:my-6">
             <section className="flex flex-col gap-6">
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
@@ -67,9 +67,9 @@ export function Home(): JSX.Element {
                     </Text>
                 </div>
                 <div className="flex flex-col md:grid md:grid-flow-row-dense lg:grid-cols-4 lg:grid-flow-col-dense gap-6">
-                    <AccountCard amount={130981.2} />
-                    <InvestimentCard amount={33212.46} />
-                    <InvoiceCard amount={2432.11} />
+                    <AccountCard data={accounts?.currentAccount} />
+                    <InvestimentCard data={accounts?.investimentAccount} />
+                    <InvoiceCard data={accounts?.creditCard} />
                 </div>
             </section>
             <section className="flex flex-1 flex-col md:grid md:grid-flow-row-dense lg:grid-cols-4 lg:grid-flow-col-dense gap-6">
@@ -94,12 +94,13 @@ export function Home(): JSX.Element {
                         ))}
                     </ul>
                 </div>
+
                 <div className="flex flex-1 flex-col col-span-1 gap-4">
                     <Heading size="xl" className="text-neutral-800">
                         Ofertas para você
                     </Heading>
 
-                    <OfferCard title="Empréstimo Beeteller" subtitle="Valor disponível de até" amount="100.000,00" />
+                    <OfferCard title={offers[0].title} subtitle={offers[0].subtitle} amount={offers[0].amount} />
                 </div>
             </section>
         </div>
