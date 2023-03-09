@@ -15,7 +15,7 @@
     "style:format": "npm run style --write",
     "types:check": "tsc --pretty --noEmit",
     "pre:commit": "lint-staged",
-    "pre:push": "concurrently \"npm run types:check\" \"npm run lint .\" \"npm run style:check .\" \"npm run test --dangerouslyIgnoreUnhandledErrors\"",
+    "pre:push": "concurrently \"npm run types:check\" \"npm run lint .\" \"npm run style:check .\" \"npm run test --environment node\"",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
