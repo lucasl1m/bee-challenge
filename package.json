@@ -16,7 +16,8 @@
     "pre:push": "concurrently \"npm run types:check\" \"npm run lint .\" \"npm run style:check .\"",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.1",

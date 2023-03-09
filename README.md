@@ -18,6 +18,7 @@ O desafio consiste em uma tela inicial de um Internet Banking de um banco. A apl
 - Linting with [ESLint](https://eslint.org/)
 - Formatting with [Prettier](https://prettier.io/)
 - Pre-commit and pre-push Git hooks with [Husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
+- Design system documentation with [Storybook](https://storybook.js.org/)
 
 ## :computer: Installation
 
