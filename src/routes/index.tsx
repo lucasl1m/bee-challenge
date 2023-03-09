@@ -1,16 +1,18 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Header } from '../components/Header';
-import { Home } from '../pages/Home';
-import { Extract } from '../pages/Extract';
-import { Pix } from '../pages/Pix';
-import { CreditCard } from '../pages/CreditCard';
+import { Extract } from '../pages/extract-page/extract-page';
+import { Pix } from '../pages/pix-page/pix-page';
+import { CreditCard } from '../pages/credit-card-page/credit-card-page';
+import { Home } from '../pages/home-page/home-page';
+
+import { Header } from '../components/common/header/header';
 
 export function AppRoutes(): JSX.Element {
     return (
         <BrowserRouter>
             <Header />
-            <main className="min-h-full flex-1 mx-4 my-4 lg:mx-16 lg:text-sm lg:mt-6 md:mx-16">
+
+            <main className="min-h-full flex-1 mx-4 lg:mx-16 lg:text-sm md:mx-16">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/extract" element={<Extract />} />
