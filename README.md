@@ -9,7 +9,12 @@
 
 O desafio consiste em uma tela inicial de um Internet Banking de um banco. A aplicação conta com alguns componentes personalizados e animações associadas.
 
+[Deploy da aplicação]("https://bee-challenge.vercel.app/")
 ## :camera: Images
+
+<img width="840" alt="Desktop View" src=".github/img/desktop-view.png" />
+
+<img width="840" alt="Mobile View" src=".github/img/mobile-view.png">
 
 ## :wrench: Technologies
 
@@ -19,6 +24,7 @@ O desafio consiste em uma tela inicial de um Internet Banking de um banco. A apl
 - Formatting with [Prettier](https://prettier.io/)
 - Pre-commit and pre-push Git hooks with [Husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged)
 - Design system documentation with [Storybook](https://storybook.js.org/)
+- Testing with [Vitest](https://vitest.dev/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 
 ## :computer: Installation
 
