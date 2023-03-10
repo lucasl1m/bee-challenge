@@ -18,9 +18,8 @@
     "pre:push": "concurrently \"npm run types:check\" \"npm run lint .\" \"npm run style:check .\" \"npm run test --environment node\"",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
-  },
+    "build-storybook": "build-storybook"
+},
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.1",
     "@radix-ui/react-popover": "^1.0.4",
@@ -54,6 +53,7 @@
     "@vitest/coverage-c8": "^0.29.2",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
+    "chromatic": "^6.17.1",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
