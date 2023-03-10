@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: `https://beeteller.free.beeceptor.com/`,
+    baseURL: `https://apimocha.com/beeteller/`,
 });
