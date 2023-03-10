@@ -9,7 +9,7 @@
 
 O desafio consiste em uma tela inicial de um Internet Banking de um banco. A aplicação conta com alguns componentes personalizados e animações associadas.
 
-[Deploy da aplicação]("https://bee-challenge.vercel.app/")
+Deploy da aplicação [clique aqui](https://bee-challenge.vercel.app/)
 ## :camera: Images
 
 <img width="840" alt="Desktop View" src=".github/img/desktop-view.png" />
