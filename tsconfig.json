@@ -23,7 +23,7 @@
       "test/*": ["test/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-  "exclude": ["node_module", "/vite.config.ts"],
+  "include": ["src"],
+  "exclude": ["node_module", "dist", "build", "coverage"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
