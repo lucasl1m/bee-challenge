@@ -44,6 +44,12 @@ This project runs on [Node.js v16](https://nodejs.org/) and uses [NPM](https://w
    $ npm run dev
    ```
 
+3. To run the storybook project, run:
+
+   ```bash
+   $ npm run storybook
+   ```
+
 ## :ledger: Development guide
 
 Learn more about the contributing conventions and guidelines at [CONTRIBUTING.md](./CONTRIBUTING.md).
