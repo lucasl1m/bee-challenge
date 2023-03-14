@@ -16,14 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["vitest/globals"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "src/*": ["src/*"],
-      "test/*": ["test/*"]
-    }
   },
-  "include": ["src"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.cjs"],
   "exclude": ["node_module", "dist", "build", "coverage"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
