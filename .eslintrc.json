@@ -3,10 +3,16 @@
         "browser": true,
         "es2021": true
     },
-    "extends": ["plugin:react/recommended", "standard-with-typescript", "prettier", "plugin:storybook/recommended"],
+    "extends": [
+        "plugin:react/recommended",
+        "standard-with-typescript",
+        "plugin:prettier/recommended",
+        "plugin:storybook/recommended"
+    ],
+    "overrides": [
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": { "ts": true, "tsx": true },
         "ecmaVersion": "latest",
         "sourceType": "module",
         "project": "./tsconfig.json"
@@ -16,7 +22,11 @@
             "version": "detect"
         }
     },
-    "plugins": ["react", "prettier", "@typescript-eslint"],
+    "plugins": [
+        "react",
+        "prettier",
+        "@typescript-eslint"
+    ],
     "rules": {
         "prettier/prettier": "warn",
 
@@ -68,5 +78,6 @@
         "@typescript-eslint.io/rules/strict-boolean-expressions": "off",
         "@typescript-eslint/consistent-type-assertions": "off",
         "@typescript-eslint/no-misused-promises": "off"
+
     }
 }
